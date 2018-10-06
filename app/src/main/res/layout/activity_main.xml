@@ -4,16 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.foodjasera.foodjasera.adapter.NoSwipePager
+    <com.foodjasera.foodjasera.adapter.bottomnav.NoSwipePager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="56dp"
         tools:background="#EFEFEF"/>
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation

@@ -1,4 +1,4 @@
-package com.foodjasera.foodjasera.adapter;
+package com.foodjasera.foodjasera.adapter.bottomnav;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
