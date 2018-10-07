@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.transaction.DetailPujaseraActivity">
+
+    <ImageView
+        android:id="@+id/image_pujasera"
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        tools:src="@drawable/ic_launcher_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_nama_pujasera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            tools:text="Nama Pujasera"/>
+
+        <TextView
+            android:id="@+id/txt_email_pujasera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/textColorBlack"
+            tools:text="(Email)"/>
+
+        <TextView
+            android:id="@+id/txt_deskripsi_pujasera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/textColorBlack"
+            tools:text="Deskripsi Pujasera"/>
+
+        <TextView
+            android:id="@+id/txt_alamat_pujasera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/textColorBlack"
+            tools:text="Alamat : "/>
+
+    </LinearLayout>
+
+</LinearLayout>

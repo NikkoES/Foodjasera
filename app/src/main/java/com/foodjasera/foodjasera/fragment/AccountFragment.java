@@ -6,25 +6,47 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.foodjasera.foodjasera.R;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class AccountFragment extends Fragment {
 
-
     public AccountFragment() {
-        // Required empty public constructor
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View v = inflater.inflate(R.layout.fragment_account, container, false);
+        ButterKnife.bind(this, v);
+
+        return v;
+    }
+
+    @OnClick({R.id.btn_edit_profile, R.id.btn_change_password, R.id.btn_keluar})
+    public void actionButton(View v){
+        switch (v.getId()){
+            case R.id.btn_edit_profile : {
+                Toast.makeText(getContext(), "Edit Profil", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.btn_change_password : {
+                Toast.makeText(getContext(), "Change Password", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.btn_keluar : {
+                Toast.makeText(getContext(), "Logout", Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
     }
 
 }

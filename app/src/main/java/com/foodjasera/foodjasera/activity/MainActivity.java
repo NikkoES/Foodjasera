@@ -4,6 +4,7 @@ import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -22,10 +23,16 @@ public class MainActivity extends AppCompatActivity {
     private BottomBarAdapter pagerAdapter;
     private boolean notificationVisible = false;
 
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setLogo(R.drawable.ic_app_name);
 
         setupViewPager();
 
@@ -36,22 +43,21 @@ public class MainActivity extends AppCompatActivity {
         addBottomNavigationItems();
         bottomNavigation.setCurrentItem(0);
 
-
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
 //                fragment.updateColor(ContextCompat.getColor(MainActivity.this, colors[position]));
                 switch (position){
                     case 0 : {
-                        getSupportActionBar().setTitle(getString(R.string.app_name));
+                        toolbar.setTitle(getString(R.string.app_name));
                         break;
                     }
                     case 1 : {
-                        getSupportActionBar().setTitle(R.string.menu_history);
+                        toolbar.setTitle(R.string.menu_history);
                         break;
                     }
                     case 2 : {
-                        getSupportActionBar().setTitle(R.string.menu_akun);
+                        toolbar.setTitle(R.string.menu_akun);
                         break;
                     }
                 }
@@ -83,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setupBottomNavBehaviors() {
-//        bottomNavigation.setBehaviorTranslationEnabled(false);
+        bottomNavigation.setBehaviorTranslationEnabled(false);
 
         /*
         Before enabling this. Change MainActivity theme to MyTheme.TranslucentNavigation in

@@ -4,11 +4,12 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.foodjasera.foodjasera"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -38,7 +39,10 @@ dependencies {
     implementation 'me.relex:circleindicator:1.2.2@aar'
     implementation 'com.google.android.gms:play-services:11.8.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services-places:11.8.0'
     implementation 'com.google.maps.android:android-maps-utils:0.3+'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+    implementation 'com.thoughtbot:expandablecheckrecyclerview:1.4'
     implementation 'com.android.support:multidex:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     testImplementation 'junit:junit:4.12'

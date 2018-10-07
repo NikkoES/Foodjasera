@@ -20,8 +20,9 @@
                 android:id="@+id/image_pujasera"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
+                android:padding="8dp"
                 android:layout_gravity="center"
-                tools:src="@drawable/ic_store"/>
+                tools:src="@drawable/ic_pujasera_buka"/>
 
             <LinearLayout
                 android:layout_width="0dp"

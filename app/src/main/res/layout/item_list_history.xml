@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_pujasera"
+        android:id="@+id/cv_transaksi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp">
@@ -14,25 +14,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/image_pujasera"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:layout_gravity="center"
-                tools:src="@drawable/ic_store"/>
+            android:padding="12dp"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/txt_nama_pujasera"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"
@@ -40,43 +33,71 @@
                     tools:text="Pujasera Cipadung" />
 
                 <TextView
-                    android:id="@+id/txt_alamat_pujasera"
-                    android:layout_width="match_parent"
+                    android:id="@+id/txt_total_harga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Rp. 24.500" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_id_transaksi"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="@color/textColorBlack"
-                    tools:text="Gang Kujang, Jalan Cipadung No. 43 RT. 04/08, Cibiru, Bandung" />
+                    tools:text="#3173010410970009" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/txt_jumlah_pesanan"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    tools:text="(4 Pesanan)" />
 
-                    <TextView
-                        android:id="@+id/txt_jarak_pujasera"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:textSize="12sp"
-                        android:textColor="@color/colorAccent"
-                        tools:text="14m" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/txt_status_pujasera"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="4dp"
-                        android:background="@drawable/button_blue_rounded"
-                        android:gravity="center"
-                        android:textSize="12sp"
-                        android:textColor="@color/textColorWhite"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        tools:text="Buka" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_tanggal_transaksi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorAccent"
+                    tools:text="04/10/2018 - 09.30" />
+
+                <TextView
+                    android:id="@+id/txt_status_transaksi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:background="@drawable/button_blue_rounded"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/textColorWhite"
+                    android:textStyle="italic|bold"
+                    tools:text="sedang diproses" />
 
             </LinearLayout>
 

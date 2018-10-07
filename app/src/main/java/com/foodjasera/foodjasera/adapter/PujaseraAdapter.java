@@ -2,6 +2,7 @@ package com.foodjasera.foodjasera.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Location;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.foodjasera.foodjasera.R;
+import com.foodjasera.foodjasera.activity.transaction.PujaseraActivity;
 import com.foodjasera.foodjasera.model.Pujasera;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -64,22 +66,24 @@ public class PujaseraAdapter extends RecyclerView.Adapter<PujaseraAdapter.ListMe
         LatLng myLatLng = new LatLng(myLatitude, myLongitude);
         LatLng storeLatLng = new LatLng(mCurrent.getLatitude(),mCurrent.getLongitude());
 
-//        Location myLocation = new Location("");
-//        Location storeLocation = new Location("");
-//
-//        myLocation.setLatitude(myLatitude);
-//        myLocation.setLongitude(myLongitude);
-//
-//        storeLocation.setLatitude(Double.parseDouble(mCurrent));
-
         double distance = SphericalUtil.computeDistanceBetween(myLatLng, storeLatLng);
 
-        holder.txtJarakPujasera.setText(String.valueOf((int) distance+" m"));
+        holder.txtJarakPujasera.setText(String.valueOf("1.5 km"));
         holder.txtStatusPujasera.setText(mCurrent.getStatusBuka());
-        Glide.with(context).
-                load(mCurrent.getImage()).
-                placeholder(R.drawable.ic_store).
-                into(holder.imagePujasera);
+        if(mCurrent.getStatusBuka().equalsIgnoreCase("buka")){
+            Glide.with(context).
+                    load(mCurrent.getImage()).
+                    placeholder(R.drawable.ic_pujasera_buka).
+                    into(holder.imagePujasera);
+            holder.txtStatusPujasera.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+        }
+        else{
+            Glide.with(context).
+                    load(mCurrent.getImage()).
+                    placeholder(R.drawable.ic_pujasera_tutup).
+                    into(holder.imagePujasera);
+            holder.txtStatusPujasera.setBackgroundColor(context.getResources().getColor(R.color.colorGray));
+        }
     }
 
     public double calculateDistance(double initialLat, double initialLong, double finalLat, double finalLong){
@@ -122,9 +126,9 @@ public class PujaseraAdapter extends RecyclerView.Adapter<PujaseraAdapter.ListMe
         @OnClick(R.id.cv_pujasera)
         public void buttonPujasera(){
             Pujasera mCurrent = listPujasera.get(getAdapterPosition());
-            Toast.makeText(context, ""+mCurrent.getLatitude(), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(context, PujaseraActivity.class);
+            i.putExtra("pujasera", mCurrent);
+            context.startActivity(i);
         }
-
     }
-
 }
